@@ -1,0 +1,538 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb7787809, pid=1770, tid=2400263024
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Server VM (20.1-b02 mixed mode linux-x86 )
+# Problematic frame:
+# C  [libc.so.6+0x75809]  short+0x9
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x8f662c00):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=1800, stack(0x8f0c1000,0x8f112000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000000
+
+Registers:
+EAX=0x8f10ff4c, EBX=0x8f713928, ECX=0x00000000, EDX=0x8f10ff4c
+ESP=0x8f10fed8, EBP=0x8f10ff18, ESI=0x8f7124f0, EDI=0x8f10ff58
+EIP=0xb7787809, EFLAGS=0x00210292, CR2=0x00000000
+
+Top of Stack: (sp=0x8f10fed8)
+0x8f10fed8:   8f10ff58 8f712440 8f10ff4c 00000000
+0x8f10fee8:   8f63c690 8f654b00 8f71147c 8f713928
+0x8f10fef8:   907bb7c8 ffffffff 8f10ffb8 b78e1870
+0x8f10ff08:   00000ffc 8f713928 907bb7c8 8f662c00
+0x8f10ff18:   8f10ffb8 8f711fbb 8f10ff4c 8f654b00
+0x8f10ff28:   8f63c690 00000000 09b2bf3c b72eedc8
+0x8f10ff38:   b6ece82b 8f7114dc 8f62f250 a93e8260
+0x8f10ff48:   8f10ffb8 6e6f4354 74206e61 20747365 
+
+Instructions: (pc=0xb7787809)
+0xb77877e9:   85 d2 74 10 8d 76 00 8b 0a 29 d1 8b 52 04 01 c8
+0xb77877f9:   85 d2 75 f3 f3 c3 90 57 8b 54 24 08 8b 4c 24 0c
+0xb7787809:   f6 01 ff 0f 84 92 01 00 00 f7 c2 03 00 00 00 74
+0xb7787819:   39 f6 02 ff 0f 84 a6 00 00 00 42 f7 c2 03 00 00 
+
+Register to memory mapping:
+
+EAX=0x8f10ff4c is pointing into the stack for thread: 0x8f662c00
+EBX=0x8f713928: <offset 0x2928> in /home/sherry/Documents/netbeans/chatDynamicLibrary/dist/libchatDynamicLibrary.so at 0x8f711000
+ECX=0x00000000 is an unknown value
+EDX=0x8f10ff4c is pointing into the stack for thread: 0x8f662c00
+ESP=0x8f10fed8 is pointing into the stack for thread: 0x8f662c00
+EBP=0x8f10ff18 is pointing into the stack for thread: 0x8f662c00
+ESI=0x8f7124f0: <offset 0x14f0> in /home/sherry/Documents/netbeans/chatDynamicLibrary/dist/libchatDynamicLibrary.so at 0x8f711000
+EDI=0x8f10ff58 is pointing into the stack for thread: 0x8f662c00
+
+
+Stack: [0x8f0c1000,0x8f112000],  sp=0x8f10fed8,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x75809]  short+0x9
+C  [libchatDynamicLibrary.so+0xfbb]  unsigned short+0x36
+C  [libchatDynamicLibrary.so+0xc66]  Java_examples_Talk_sendMsg+0x9a
+j  examples.Talk.sendMsg(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+0
+j  examples.Talk.jButtonSendActionPerformed(Ljava/awt/event/ActionEvent;)V+31
+j  examples.Talk.access$000(Lexamples/Talk;Ljava/awt/event/ActionEvent;)V+2
+j  examples.Talk$1.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+566
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+320
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$1.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x3dff01]  AsyncGetCallTrace+0x914f1
+V  [libjvm.so+0x5e1298]  __int128+0x25b8
+V  [libjvm.so+0x3dfd2f]  AsyncGetCallTrace+0x9131f
+V  [libjvm.so+0x445b9e]  JVM_DoPrivileged+0x40e
+C  [libjava.so+0xa96c]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x3c
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$2.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$2.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x3dff01]  AsyncGetCallTrace+0x914f1
+V  [libjvm.so+0x5e1298]  __int128+0x25b8
+V  [libjvm.so+0x3dfd2f]  AsyncGetCallTrace+0x9131f
+V  [libjvm.so+0x445b9e]  JVM_DoPrivileged+0x40e
+C  [libjava.so+0xa96c]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2+0x3c
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+204
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x3dff01]  AsyncGetCallTrace+0x914f1
+V  [libjvm.so+0x5e1298]  __int128+0x25b8
+V  [libjvm.so+0x3df775]  AsyncGetCallTrace+0x90d65
+V  [libjvm.so+0x3df838]  AsyncGetCallTrace+0x90e28
+V  [libjvm.so+0x4642d7]  JVM_GetVersionInfo+0x1577
+V  [libjvm.so+0x6e16bf]  JVM_handle_linux_signal+0xfd67f
+V  [libjvm.so+0x5e2aee]  unsigned+0xc5e
+C  [libpthread.so.0+0x6c77]  short+0xc7
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  examples.Talk.sendMsg(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V+0
+j  examples.Talk.jButtonSendActionPerformed(Ljava/awt/event/ActionEvent;)V+31
+j  examples.Talk.access$000(Lexamples/Talk;Ljava/awt/event/ActionEvent;)V+2
+j  examples.Talk$1.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+566
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+320
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+41
+j  java.awt.EventQueue.access$000(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$1.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+6
+j  java.awt.EventQueue$2.run()Ljava/lang/Void;+11
+j  java.awt.EventQueue$2.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.AccessControlContext$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+73
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z+204
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x8f677800 JavaThread "Thread-1" [_thread_in_native, id=1803, stack(0x8eed7000,0x8ef28000)]
+  0x8f670c00 JavaThread "TimerQueue" daemon [_thread_blocked, id=1802, stack(0x8f053000,0x8f0a4000)]
+  0x8f663c00 JavaThread "DestroyJavaVM" [_thread_blocked, id=1773, stack(0xb6a72000,0xb6ac3000)]
+=>0x8f662c00 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=1800, stack(0x8f0c1000,0x8f112000)]
+  0x8f661c00 JavaThread "AWT-Shutdown" [_thread_blocked, id=1799, stack(0x8f112000,0x8f163000)]
+  0x8f660c00 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=1798, stack(0x8f163000,0x8f1b4000)]
+  0x09bdf800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1797, stack(0x8f1b9000,0x8f20a000)]
+  0x8f601400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1795, stack(0x8f714000,0x8f765000)]
+  0x09b19800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=1794, stack(0x8f57f000,0x8f600000)]
+  0x09b17800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=1793, stack(0x8f765000,0x8f7e6000)]
+  0x09b0f800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=1787, stack(0x8f7e6000,0x8f837000)]
+  0x09b0dc00 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=1786, stack(0x8f837000,0x8f888000)]
+  0x09b0b400 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=1785, stack(0x8f888000,0x8f8d9000)]
+  0x09b03400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1782, stack(0x8f8d9000,0x8f92a000)]
+  0x09af2800 JavaThread "Finalizer" daemon [_thread_blocked, id=1781, stack(0x8f92a000,0x8f97b000)]
+  0x09af1000 JavaThread "Reference Handler" daemon [_thread_blocked, id=1780, stack(0x8f97b000,0x8f9cc000)]
+
+Other Threads:
+  0x09aed400 VMThread [stack: 0x8f9cc000,0x8fa4d000] [id=1779]
+  0x8f603400 WatcherThread [stack: 0x8f4fe000,0x8f57f000] [id=1796]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 9408K, used 5211K [0xa8f00000, 0xa9980000, 0xb3700000)
+  eden space 8064K, 64% used [0xa8f00000,0xa9416d80,0xa96e0000)
+  from space 1344K, 0% used [0xa9830000,0xa9830000,0xa9980000)
+  to   space 1344K, 0% used [0xa96e0000,0xa96e0000,0xa9830000)
+ PSOldGen        total 21504K, used 0K [0x93f00000, 0x95400000, 0xa8f00000)
+  object space 21504K, 0% used [0x93f00000,0x93f00000,0x95400000)
+ PSPermGen       total 16384K, used 9140K [0x8ff00000, 0x90f00000, 0x93f00000)
+  object space 16384K, 55% used [0x8ff00000,0x907ed2e0,0x90f00000)
+
+Code Cache  [0xb37ce000, 0xb3a0e000, 0xb67ce000)
+ total_blobs=238 nmethods=27 adapters=173 free_code_cache=49963264 largest_free_block=17152
+
+Dynamic libraries:
+08048000-08052000 r-xp 00000000 08:03 429317     /opt/java/jre/bin/java
+08052000-08053000 rwxp 00009000 08:03 429317     /opt/java/jre/bin/java
+09a6b000-09d51000 rwxp 00000000 00:00 0          [heap]
+8eed7000-8eeda000 ---p 00000000 00:00 0 
+8eeda000-8ef28000 rwxp 00000000 00:00 0 
+8ef28000-8ef2d000 r-xs 00000000 08:06 8000527    /home/sherry/.fontconfig/e8c5264944783826d4583858a6380f8e-le32d4.cache-3
+8ef2d000-8ef4f000 r-xs 00000000 08:05 129372     /var/cache/fontconfig/f6b893a7224233d96cb72fd88691c0b4-le32d4.cache-3
+8ef4f000-8ef90000 r-xs 00000000 08:05 129342     /var/cache/fontconfig/17090aa38d5c6f09fb8c5c354938f1d7-le32d4.cache-3
+8ef90000-8efd1000 r-xs 00000000 08:05 129341     /var/cache/fontconfig/df311e82a1a24c41a75c2c930223552e-le32d4.cache-3
+8efdb000-8f053000 rwxs 00000000 00:04 1114113    /SYSV00000000 (deleted)
+8f053000-8f056000 ---p 00000000 00:00 0 
+8f056000-8f0a4000 rwxp 00000000 00:00 0 
+8f0a4000-8f0ab000 r-xp 00000000 08:03 428128     /opt/java/jre/lib/i386/libnio.so
+8f0ab000-8f0ac000 rwxp 00006000 08:03 428128     /opt/java/jre/lib/i386/libnio.so
+8f0ac000-8f0c0000 r-xp 00000000 08:03 428127     /opt/java/jre/lib/i386/libnet.so
+8f0c0000-8f0c1000 rwxp 00013000 08:03 428127     /opt/java/jre/lib/i386/libnet.so
+8f0c1000-8f0c4000 ---p 00000000 00:00 0 
+8f0c4000-8f112000 rwxp 00000000 00:00 0 
+8f112000-8f115000 ---p 00000000 00:00 0 
+8f115000-8f163000 rwxp 00000000 00:00 0 
+8f163000-8f166000 ---p 00000000 00:00 0 
+8f166000-8f1b4000 rwxp 00000000 00:00 0 
+8f1b4000-8f1b8000 r-xp 00000000 08:03 144419     /usr/lib/libXfixes.so.3.1.0
+8f1b8000-8f1b9000 rwxp 00003000 08:03 144419     /usr/lib/libXfixes.so.3.1.0
+8f1b9000-8f1bc000 ---p 00000000 00:00 0 
+8f1bc000-8f20a000 rwxp 00000000 00:00 0 
+8f20a000-8f283000 r-xp 00000000 08:03 429297     /opt/java/jre/lib/i386/libfontmanager.so
+8f283000-8f28d000 rwxp 00078000 08:03 429297     /opt/java/jre/lib/i386/libfontmanager.so
+8f28d000-8f292000 rwxp 00000000 00:00 0 
+8f292000-8f2af000 r-xp 00000000 08:03 142881     /usr/lib/libxcb.so.1.1.0
+8f2af000-8f2b0000 rwxp 0001d000 08:03 142881     /usr/lib/libxcb.so.1.1.0
+8f2b0000-8f3c8000 r-xp 00000000 08:03 145325     /usr/lib/libX11.so.6.3.0
+8f3c8000-8f3cc000 rwxp 00117000 08:03 145325     /usr/lib/libX11.so.6.3.0
+8f3cc000-8f3dd000 r-xp 00000000 08:03 143781     /usr/lib/libXext.so.6.4.0
+8f3dd000-8f3de000 rwxp 00010000 08:03 143781     /usr/lib/libXext.so.6.4.0
+8f3df000-8f3e1000 r-xs 00000000 08:06 8000445    /home/sherry/.fontconfig/ee02df4e820531f5339fe454ab05291c-le32d4.cache-3
+8f3e1000-8f3e2000 r-xs 00000000 08:06 8000949    /home/sherry/.fontconfig/180eb47c68cf23c94787fa4711351949-le32d4.cache-3
+8f3e2000-8f3e3000 r-xs 00000000 08:06 8000782    /home/sherry/.fontconfig/d36b0798a422d9c9090ea779a37c1733-le32d4.cache-3
+8f3e3000-8f3e4000 r-xs 00000000 08:06 8000855    /home/sherry/.fontconfig/713a988f7c6e35b71b1e6175ced75354-le32d4.cache-3
+8f3e4000-8f3e5000 r-xs 00000000 08:06 7997954    /home/sherry/.fontconfig/e7e2c44abc9545a23d946f0fb961e461-le32d4.cache-3
+8f3e5000-8f3e8000 r-xs 00000000 08:06 8000799    /home/sherry/.fontconfig/d4b77c26417dabc0ab41c6e47d32045d-le32d4.cache-3
+8f3e8000-8f3e9000 r-xs 00000000 08:06 7997958    /home/sherry/.fontconfig/60927c2627d2f431f6f95d4a450efcfc-le32d4.cache-3
+8f3e9000-8f3ea000 r-xs 00000000 08:06 8000541    /home/sherry/.fontconfig/9a534c7b7f0bba24e5bd928013198211-le32d4.cache-3
+8f3ea000-8f3ed000 r-xs 00000000 08:06 8000872    /home/sherry/.fontconfig/d5a0f30253996e56de88f0721782ee79-le32d4.cache-3
+8f3ed000-8f3ee000 r-xs 00000000 08:06 8000873    /home/sherry/.fontconfig/776444fee41719079bc4d76ac59e4545-le32d4.cache-3
+8f3ee000-8f3ef000 r-xs 00000000 08:06 8000291    /home/sherry/.fontconfig/179da35e63e46e96a64ca0d3f4422e64-le32d4.cache-3
+8f3ef000-8f3f2000 r-xs 00000000 08:05 129411     /var/cache/fontconfig/6d2376a383715d59725915647ddb0428-le32d4.cache-3
+8f3f2000-8f402000 r-xs 00000000 08:05 116461     /var/cache/fontconfig/8d4af663993b81a124ee82e610bb31f9-le32d4.cache-3
+8f402000-8f408000 r-xs 00000000 08:05 129373     /var/cache/fontconfig/d62e99ef547d1d24cdb1bd22ec1a2976-le32d4.cache-3
+8f408000-8f44b000 r-xp 00000000 08:03 671989     /opt/java/jre/lib/i386/xawt/libmawt.so
+8f44b000-8f44d000 rwxp 00043000 08:03 671989     /opt/java/jre/lib/i386/xawt/libmawt.so
+8f44d000-8f44e000 rwxp 00000000 00:00 0 
+8f44e000-8f4d3000 r-xp 00000000 08:03 429279     /opt/java/jre/lib/i386/libawt.so
+8f4d3000-8f4da000 rwxp 00085000 08:03 429279     /opt/java/jre/lib/i386/libawt.so
+8f4da000-8f4fe000 rwxp 00000000 00:00 0 
+8f4fe000-8f4ff000 ---p 00000000 00:00 0 
+8f4ff000-8f57f000 rwxp 00000000 00:00 0 
+8f57f000-8f582000 ---p 00000000 00:00 0 
+8f582000-8f600000 rwxp 00000000 00:00 0 
+8f600000-8f68f000 rwxp 00000000 00:00 0 
+8f68f000-8f700000 ---p 00000000 00:00 0 
+8f700000-8f707000 r-xp 00000000 08:03 144264     /usr/lib/libXrender.so.1.3.0
+8f707000-8f708000 rwxp 00007000 08:03 144264     /usr/lib/libXrender.so.1.3.0
+8f708000-8f710000 r-xp 00000000 08:03 144420     /usr/lib/libXcursor.so.1.0.2
+8f710000-8f711000 rwxp 00007000 08:03 144420     /usr/lib/libXcursor.so.1.0.2
+8f711000-8f713000 r-xp 00000000 08:06 7471397    /home/sherry/Documents/netbeans/chatDynamicLibrary/dist/libchatDynamicLibrary.so
+8f713000-8f714000 rwxp 00001000 08:06 7471397    /home/sherry/Documents/netbeans/chatDynamicLibrary/dist/libchatDynamicLibrary.so
+8f714000-8f717000 ---p 00000000 00:00 0 
+8f717000-8f765000 rwxp 00000000 00:00 0 
+8f765000-8f768000 ---p 00000000 00:00 0 
+8f768000-8f7e6000 rwxp 00000000 00:00 0 
+8f7e6000-8f7e9000 ---p 00000000 00:00 0 
+8f7e9000-8f837000 rwxp 00000000 00:00 0 
+8f837000-8f83a000 ---p 00000000 00:00 0 
+8f83a000-8f888000 rwxp 00000000 00:00 0 
+8f888000-8f88b000 ---p 00000000 00:00 0 
+8f88b000-8f8d9000 rwxp 00000000 00:00 0 
+8f8d9000-8f8dc000 ---p 00000000 00:00 0 
+8f8dc000-8f92a000 rwxp 00000000 00:00 0 
+8f92a000-8f92d000 ---p 00000000 00:00 0 
+8f92d000-8f97b000 rwxp 00000000 00:00 0 
+8f97b000-8f97e000 ---p 00000000 00:00 0 
+8f97e000-8f9cc000 rwxp 00000000 00:00 0 
+8f9cc000-8f9cd000 ---p 00000000 00:00 0 
+8f9cd000-8fa81000 rwxp 00000000 00:00 0 
+8fa81000-8fc19000 r-xs 03029000 08:03 415820     /opt/java/jre/lib/rt.jar
+8fc19000-8fc1a000 ---p 00000000 00:00 0 
+8fc1a000-8fc9a000 rwxp 00000000 00:00 0 
+8fc9a000-8fc9b000 ---p 00000000 00:00 0 
+8fc9b000-8fd23000 rwxp 00000000 00:00 0 
+8fd23000-8fd3b000 rwxp 00000000 00:00 0 
+8fd3b000-8fd46000 rwxp 00000000 00:00 0 
+8fd46000-8fde3000 rwxp 00000000 00:00 0 
+8fde3000-8fdeb000 rwxp 00000000 00:00 0 
+8fdeb000-8fe03000 rwxp 00000000 00:00 0 
+8fe03000-8fe0e000 rwxp 00000000 00:00 0 
+8fe0e000-8feab000 rwxp 00000000 00:00 0 
+8feab000-8feb1000 rwxp 00000000 00:00 0 
+8feb1000-8feff000 rwxp 00000000 00:00 0 
+8feff000-90f00000 rwxp 00000000 00:00 0 
+90f00000-93f00000 rwxp 00000000 00:00 0 
+93f00000-95400000 rwxp 00000000 00:00 0 
+95400000-a8f00000 rwxp 00000000 00:00 0 
+a8f00000-a9980000 rwxp 00000000 00:00 0 
+a9980000-b3700000 rwxp 00000000 00:00 0 
+b3700000-b3701000 rwxp 00000000 00:00 0 
+b3701000-b370d000 r-xp 00000000 08:03 144392     /usr/lib/libXi.so.6.1.0
+b370d000-b370e000 rwxp 0000b000 08:03 144392     /usr/lib/libXi.so.6.1.0
+b370e000-b3717000 rwxp 00000000 00:00 0 
+b3717000-b37ce000 rwxp 00000000 00:00 0 
+b37ce000-b3a0e000 rwxp 00000000 00:00 0 
+b3a0e000-b67ce000 rwxp 00000000 00:00 0 
+b67ce000-b67d9000 r-xp 00000000 08:03 787739     /lib/libnss_files-2.13.so
+b67d9000-b67da000 r-xp 0000a000 08:03 787739     /lib/libnss_files-2.13.so
+b67da000-b67db000 rwxp 0000b000 08:03 787739     /lib/libnss_files-2.13.so
+b67db000-b67df000 r-xp 00000000 08:03 142818     /usr/lib/libXdmcp.so.6.0.0
+b67df000-b67e0000 rwxp 00003000 08:03 142818     /usr/lib/libXdmcp.so.6.0.0
+b67e0000-b67e2000 r-xp 00000000 08:03 142832     /usr/lib/libXau.so.6.0.0
+b67e2000-b67e3000 rwxp 00001000 08:03 142832     /usr/lib/libXau.so.6.0.0
+b67e3000-b67e7000 r-xp 00000000 08:03 144472     /usr/lib/libXtst.so.6.1.0
+b67e7000-b67e8000 rwxp 00003000 08:03 144472     /usr/lib/libXtst.so.6.1.0
+b67e8000-b67eb000 r-xp 00000000 08:03 429308     /opt/java/jre/lib/i386/libdt_socket.so
+b67eb000-b67ec000 rwxp 00003000 08:03 429308     /opt/java/jre/lib/i386/libdt_socket.so
+b67ec000-b67fb000 r-xp 00000000 08:03 428123     /opt/java/jre/lib/i386/libzip.so
+b67fb000-b67fd000 rwxp 0000e000 08:03 428123     /opt/java/jre/lib/i386/libzip.so
+b67fd000-b6805000 rwxs 00000000 08:03 263898     /tmp/hsperfdata_sherry/1770
+b6805000-b6a05000 r-xp 00000000 08:03 144196     /usr/lib/locale/locale-archive
+b6a05000-b6a08000 r-xp 00000000 08:03 428124     /opt/java/jre/lib/i386/libnpt.so
+b6a08000-b6a09000 rwxp 00002000 08:03 428124     /opt/java/jre/lib/i386/libnpt.so
+b6a09000-b6a43000 r-xp 00000000 08:03 429307     /opt/java/jre/lib/i386/libjdwp.so
+b6a43000-b6a44000 rwxp 00039000 08:03 429307     /opt/java/jre/lib/i386/libjdwp.so
+b6a44000-b6a67000 r-xp 00000000 08:03 428122     /opt/java/jre/lib/i386/libjava.so
+b6a67000-b6a69000 rwxp 00023000 08:03 428122     /opt/java/jre/lib/i386/libjava.so
+b6a69000-b6a70000 r-xp 00000000 08:03 787795     /lib/librt-2.13.so
+b6a70000-b6a71000 r-xp 00006000 08:03 787795     /lib/librt-2.13.so
+b6a71000-b6a72000 rwxp 00007000 08:03 787795     /lib/librt-2.13.so
+b6a72000-b6a75000 ---p 00000000 00:00 0 
+b6a75000-b6ac3000 rwxp 00000000 00:00 0 
+b6ac3000-b6aeb000 r-xp 00000000 08:03 783398     /lib/libm-2.13.so
+b6aeb000-b6aec000 r-xp 00027000 08:03 783398     /lib/libm-2.13.so
+b6aec000-b6aed000 rwxp 00028000 08:03 783398     /lib/libm-2.13.so
+b6aed000-b729f000 r-xp 00000000 08:03 671998     /opt/java/jre/lib/i386/server/libjvm.so
+b729f000-b72f3000 rwxp 007b1000 08:03 671998     /opt/java/jre/lib/i386/server/libjvm.so
+b72f3000-b7712000 rwxp 00000000 00:00 0 
+b7712000-b7871000 r-xp 00000000 08:03 783399     /lib/libc-2.13.so
+b7871000-b7872000 ---p 0015f000 08:03 783399     /lib/libc-2.13.so
+b7872000-b7874000 r-xp 0015f000 08:03 783399     /lib/libc-2.13.so
+b7874000-b7875000 rwxp 00161000 08:03 783399     /lib/libc-2.13.so
+b7875000-b7879000 rwxp 00000000 00:00 0 
+b7879000-b787c000 r-xp 00000000 08:03 783366     /lib/libdl-2.13.so
+b787c000-b787d000 r-xp 00002000 08:03 783366     /lib/libdl-2.13.so
+b787d000-b787e000 rwxp 00003000 08:03 783366     /lib/libdl-2.13.so
+b787e000-b7885000 r-xp 00000000 08:03 671990     /opt/java/jre/lib/i386/jli/libjli.so
+b7885000-b7887000 rwxp 00006000 08:03 671990     /opt/java/jre/lib/i386/jli/libjli.so
+b7887000-b789e000 r-xp 00000000 08:03 783396     /lib/libpthread-2.13.so
+b789e000-b789f000 r-xp 00016000 08:03 783396     /lib/libpthread-2.13.so
+b789f000-b78a0000 rwxp 00017000 08:03 783396     /lib/libpthread-2.13.so
+b78a0000-b78a2000 rwxp 00000000 00:00 0 
+b78a2000-b78a4000 r-xs 00000000 08:05 116838     /var/cache/fontconfig/1876b2dcf508980ebba421dbe8e808d3-le32d4.cache-3
+b78a4000-b78a5000 r-xs 0001c000 08:03 546433     /usr/share/netbeans/platform/modules/ext/swing-layout-1.0.4.jar
+b78a5000-b78a6000 rwxp 00000000 00:00 0 
+b78a6000-b78a7000 r-xp 00000000 00:00 0 
+b78a7000-b78bc000 r-xp 00000000 08:03 783664     /lib/libnsl-2.13.so
+b78bc000-b78bd000 r-xp 00015000 08:03 783664     /lib/libnsl-2.13.so
+b78bd000-b78be000 rwxp 00016000 08:03 783664     /lib/libnsl-2.13.so
+b78be000-b78c0000 rwxp 00000000 00:00 0 
+b78c0000-b78cb000 r-xp 00000000 08:03 428121     /opt/java/jre/lib/i386/libverify.so
+b78cb000-b78cc000 rwxp 0000b000 08:03 428121     /opt/java/jre/lib/i386/libverify.so
+b78cc000-b78cd000 rwxp 00000000 00:00 0 
+b78cd000-b78ce000 r-xp 00000000 00:00 0          [vdso]
+b78ce000-b78ec000 r-xp 00000000 08:03 783904     /lib/ld-2.13.so
+b78ec000-b78ed000 r-xp 0001d000 08:03 783904     /lib/ld-2.13.so
+b78ed000-b78ee000 rwxp 0001e000 08:03 783904     /lib/ld-2.13.so
+bfe77000-bfe98000 rwxp 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xdebug -Xrunjdwp:transport=dt_socket,address=localhost.localdomain:34446 -Dfile.encoding=UTF-8 
+java_command: examples.Antenna
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/java
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/java/bin:/usr/share/hadoop/bin:/usr/share/java/apache-ant/bin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/opt/kde/bin:/usr/bin/core_perl:/opt/qt/bin
+LD_LIBRARY_PATH=/opt/java/jre/lib/i386/server:/opt/java/jre/lib/i386:/opt/java/jre/../lib/i386:/opt/java/jre/lib/i386/client:/opt/java/jre/lib/i386:/opt/java/jre/../lib/i386
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x725510], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x725510], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5dff20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5dff20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5dff20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5dff20], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5e3160], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x5e2d40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: [libjvm.so+0x5e2d40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x5e2d40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Linux
+uname:Linux 2.6.39-ARCH #1 SMP PREEMPT Tue Jun 7 05:49:02 UTC 2011 i686
+libc:glibc 2.13 NPTL 2.13 
+rlimit: STACK 8192k, CORE 0k, NPROC 16098, NOFILE 1024, AS infinity
+load average:0.13 0.34 0.22
+
+/proc/meminfo:
+MemTotal:        2062868 kB
+MemFree:          810344 kB
+Buffers:           56620 kB
+Cached:           522652 kB
+SwapCached:            0 kB
+Active:           717928 kB
+Inactive:         468428 kB
+Active(anon):     607260 kB
+Inactive(anon):     4592 kB
+Active(file):     110668 kB
+Inactive(file):   463836 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:       1185368 kB
+HighFree:          42532 kB
+LowTotal:         877500 kB
+LowFree:          767812 kB
+SwapTotal:       4297380 kB
+SwapFree:        4297380 kB
+Dirty:                52 kB
+Writeback:             0 kB
+AnonPages:        607144 kB
+Mapped:           128700 kB
+Shmem:              4776 kB
+Slab:              31796 kB
+SReclaimable:      21264 kB
+SUnreclaim:        10532 kB
+KernelStack:        2992 kB
+PageTables:         5636 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     5328812 kB
+Committed_AS:    2072504 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       52472 kB
+VmallocChunk:      42492 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    294912 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:       40952 kB
+DirectMap4M:      868352 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Core(TM)2 Duo CPU     T6400  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1994.845
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm dts
+bogomips	: 3991.92
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Core(TM)2 Duo CPU     T6400  @ 2.00GHz
+stepping	: 10
+cpu MHz		: 1994.845
+cache size	: 2048 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm dts
+bogomips	: 3991.22
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2062868k(810344k free), swap 4297380k(4297380k free)
+
+vm_info: Java HotSpot(TM) Server VM (20.1-b02) for linux-x86 JRE (1.6.0_26-b03), built on May  4 2011 01:04:10 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Thu Jun 16 00:33:44 2011
+elapsed time: 37 seconds
+
